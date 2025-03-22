@@ -9,6 +9,9 @@
 #include "matrizLED.h"
 #include "hardware/uart.h"
 
+#include "mic.h"
+#include "math.h"
+
 #define I2C_PORT i2c1
 #define I2C_SDA 14
 #define I2C_SCL 15
@@ -23,9 +26,17 @@ int main()
 {
     stdio_init_all();
 
+
+    uint dma_channel = mic_init();
+
+    // Buffer de amostras do ADC.
+    uint16_t adc_buffer[SAMPLES];
+
+
     npInit(LED_PIN);
     npClear(); // limpa a matriz
     npWrite(); // Escreve os dados nos LEDs (reset neste caso)
+
 
     i2c_setup();
     ssd1306_init(&display, I2C_PORT, 64, 128, 0x3C, false);
@@ -33,41 +44,95 @@ int main()
     ssd1306_draw_string(&display, "Hello world! :)", 10, 20);
     ssd1306_update(&display);
 
+    // Amostragem de teste.
+    printf("Amostragem de teste...\n");
+    mic_sample(adc_buffer, dma_channel);
+
+    printf("Configuracoes completas!\n");
+
     while (true)
     {
-        /*Exemplo 1: semáforo*/
-        sleep_ms(1000);
-        npClear();
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                setLEDxy(j, i, 25, 0, 0); // setLEDxy(x, y, r, g, b);
-            }
-        }
+        // Realiza uma amostragem do microfone.
+        mic_sample(adc_buffer, dma_channel);
 
-        npWrite(); // Escreve os dados nos LEDs.
-        sleep_ms(1000);
+        // Pega a potência média da amostragem do microfone.
+        float avg = mic_power(adc_buffer);
+        avg = 2.f * abs(ADC_ADJUST(avg)); // Ajusta para intervalo de 0 a 3.3V. (apenas magnitude, sem sinal)
+
+        // Calcula intensidade a ser mostrada na matriz de LEDs.
+        uint intensity = mic_get_intensity(avg) <= 5 ? mic_get_intensity(avg) : 5;
+        printf("intensity: %d \n", intensity);
+
         npClear();
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                setLEDxy(j, i, 12.5, 12.5, 0);
-            }
+        switch (intensity) {
+            case 0: 
+                setLEDline(0,0,0,0);
+                setLEDline(1,0,0,0);
+                setLEDline(2,0,0,0);
+                setLEDline(3,0,0,0);
+                setLEDline(4,0,0,0);
+                break;
+            case 1:
+                setLEDline(0,0,15,35);
+                break;
+            case 2:
+                setLEDline(0,0,24,56);
+                setLEDline(1,0,24,56);
+                break;
+            case 3:
+                setLEDline(0,0,27,63);
+                setLEDline(1,0,27,63);
+                setLEDline(2,0,27,63);
+                break;
+            case 4:
+                setLEDline(0,0,30,70);
+                setLEDline(1,0,30,70);
+                setLEDline(2,0,30,70);
+                setLEDline(3,0,30,70);
+                break;
+            case 5: 
+                setLEDline(0,0,30,70);
+                setLEDline(1,0,30,70);
+                setLEDline(2,0,30,70);
+                setLEDline(3,0,30,70);
+                setLEDline(4,0,30,70);
+                break;
         }
-        npWrite(); // Escreve os dados nos LEDs.
-        sleep_ms(1000);
-        npClear();
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                setLEDxy(j, i, 0, 25, 0);
-            }
-        }
-        npWrite(); // Escreve os dados nos LEDs.
-        sleep_ms(1000);
+        npWrite();
+
+        /*Exemplo 1: semáforo*/
+        // sleep_ms(1000);
+        // npClear();
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     for (int j = 0; j < 5; j++)
+        //     {
+        //         setLEDxy(j, i, 25, 0, 0); // setLEDxy(x, y, r, g, b);
+        //     }
+        // }
+
+        // npWrite(); // Escreve os dados nos LEDs.
+        // sleep_ms(1000);
+        // npClear();
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     for (int j = 0; j < 5; j++)
+        //     {
+        //         setLEDxy(j, i, 12.5, 12.5, 0);
+        //     }
+        // }
+        // npWrite(); // Escreve os dados nos LEDs.
+        // sleep_ms(1000);
+        // npClear();
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     for (int j = 0; j < 5; j++)
+        //     {
+        //         setLEDxy(j, i, 0, 25, 0);
+        //     }
+        // }
+        // npWrite(); // Escreve os dados nos LEDs.
+        // sleep_ms(1000);
 
         /*Exemplo 2: Contador de 9s com reset automático*/
         // static int i = 9;
@@ -89,7 +154,6 @@ int main()
         //   i=4;
         // sleep_ms(1000);
 
-        printf("Hello, world!\n");
         sleep_ms(200);
     }
 }

@@ -41,6 +41,7 @@ add_executable(projeto-lib-andrew-tobias
     ws2818b.pio
     ssd1306.c
     callbacks_timer.c
+    mic.c
 )
 
 
@@ -59,7 +60,9 @@ target_link_libraries(projeto-lib-andrew-tobias
         pico_stdlib
         hardware_pio
         hardware_clocks
-        hardware_i2c)
+        hardware_i2c
+        hardware_dma
+        hardware_adc)
 
 # Adiciona os diretórios de include ao projeto
 target_include_directories(projeto-lib-andrew-tobias PRIVATE
