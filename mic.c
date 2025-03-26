@@ -5,6 +5,57 @@
 // Configuração do DMA
 static dma_channel_config dma_cfg;
 
+// Definindo fatores de calibração para cada nível de sensibilidade
+const float CALIBRATION_FACTORS[5] = {
+    0.55f,   // Nível 0 (Menos sensível)
+    0.6f,   // Nível 1
+    0.7f,   // Nível 2 (Neutro)
+    0.8f,   // Nível 3
+    0.9f    // Nível 4 (Mais sensível)
+};
+
+float mic_rms_to_db(float rms_voltage, uint8_t sensitivity_level) {
+    if (rms_voltage <= 0.0001f) return 0.0f;
+    
+    // Usa o fator de calibração baseado no nível de sensibilidade
+    float calibration_factor = CALIBRATION_FACTORS[sensitivity_level];
+    
+    float sound_pressure = rms_voltage / MIC_SENSITIVITY;
+    float db = 20.0f * log10f(sound_pressure / REF_SOUND_PRESSURE);
+    
+    return fmaxf(0.0f, db * calibration_factor);
+}
+
+/**
+ * Calcula a potência média das leituras do ADC. (Valor RMS)
+ */
+float mic_power(const uint16_t* adc_buffer) {
+    double sum_squared = 0.0;
+    float max_voltage = -INFINITY;
+    float min_voltage = INFINITY;
+    
+    // Calculate sum of squares with proper ADC conversion
+    for (uint i = 0; i < SAMPLES; ++i) {
+        // Convert ADC value to voltage and square it
+        float voltage = ADC_ADJUST(adc_buffer[i]);
+        sum_squared += voltage * voltage;
+        
+        // Track max and min voltages for debugging
+        max_voltage = fmaxf(max_voltage, voltage);
+        min_voltage = fminf(min_voltage, voltage);
+    }
+    
+    // Calculate RMS (Root Mean Square)
+    float rms = sqrt(sum_squared / SAMPLES);
+    
+    // Debug prints
+    printf("Debug mic_power - Max Voltage: %.6f | Min Voltage: %.6f | RMS: %.6f\n", 
+           max_voltage, min_voltage, rms);
+    
+    return rms;
+}
+
+
 /**
  * Inicializa o módulo de microfone, configurando ADC e DMA.
  */
@@ -75,18 +126,6 @@ void mic_sample(uint16_t* adc_buffer, uint dma_channel) {
     adc_run(false);
 }
 
-/**
- * Calcula a potência média das leituras do ADC. (Valor RMS)
- */
-float mic_power(const uint16_t* adc_buffer) {
-    float avg = 0.f;
-
-    for (uint i = 0; i < SAMPLES; ++i)
-        avg += adc_buffer[i] * adc_buffer[i];
-    
-    avg /= SAMPLES;
-    return sqrt(avg);
-}
 
 /**
  * Calcula a intensidade do volume registrado no microfone, de 0 a 4, usando a tensão.
