@@ -16,8 +16,8 @@ Badge Versão
 ## 🌈 Matriz LED Inteligente
 | Colunas | Função                | Padrão de Cores           |
 |---------|-----------------------|---------------------------|
-| 0-1     | Medição principal     | Verde → Amarelo → Vermelho|
-| 3-4     | Indicador de sensibilidade | Azul degradê        |
+| 4-5     | Medição principal     | Verde → Amarelo → Vermelho|
+| 0-1     | Indicador de sensibilidade | Azul degradê         |
 
 ## ⚠️ Sistema de Alerta
 - **Pisca rapidamente** (200ms) quando excede +10dB do limite configurado
