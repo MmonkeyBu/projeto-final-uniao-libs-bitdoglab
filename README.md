@@ -3,32 +3,32 @@ Badge Status
 Badge Versão
 
 🌟 Visão Geral
-Um sistema avançado de monitoramento acústico desenvolvido para Raspberry Pi Pico que combina:
-
-🖥️ Display OLED SSD1306 para visualização detalhada
-
-🌈 Matriz de LEDs WS2812B 5x5 como medidor visual intuitivo
-
-🎤 Captura de áudio preciso com microfone analógico
-
-⚙️ 5 níveis de sensibilidade ajustáveis para diferentes ambientes
+    Um sistema avançado de monitoramento acústico desenvolvido para Raspberry Pi Pico que combina:
+    
+    🖥️ Display OLED SSD1306 para visualização detalhada
+    
+    🌈 Matriz de LEDs WS2812B 5x5 como medidor visual intuitivo
+    
+    🎤 Captura de áudio preciso com microfone analógico
+    
+    ⚙️ 5 níveis de sensibilidade ajustáveis para diferentes ambientes
 
 🧩 Componentes Necessários
-Componente	Especificações
-Raspberry Pi Pico	Microcontrolador RP2040
-Display OLED	SSD1306 128x64 (I2C)
-Matriz de LEDs	WS2812B 5x5
-Microfone	Analógico com saída ADC
-Botões	2x para controle
+    Componente	Especificações
+        Raspberry Pi Pico	Microcontrolador RP2040
+        Display OLED	SSD1306 128x64 (I2C)
+        Matriz de LEDs	WS2812B 5x5
+        Microfone	Analógico com saída ADC
+        Botões	2x para controle
 🛠️ Configuração de Hardware
 plaintext
 Copy
-Pinos Padrão:
-- I2C: SDA=GP4, SCL=GP5
-- Matriz LED: GP16
-- Botão A: GP14
-- Botão B: GP15
-- Microfone: ADC0 (GP26)
+    Pinos Padrão:
+    - I2C: SDA=GP4, SCL=GP5
+    - Matriz LED: GP16
+    - Botão A: GP14
+    - Botão B: GP15
+    - Microfone: ADC0 (GP26)
 ✨ Recursos Principais
 🖥️ Visualização OLED
 Gráfico de barras em tempo real
@@ -36,26 +36,26 @@ Gráfico de barras em tempo real
 Medição numérica precisa (dB)
 
 Classificação automática do ambiente:
-
-🟢 Silencioso (<30dB)
-
-🟡 Moderado (30-60dB)
-
-🟠 Ruidoso (60-90dB)
-
-🔴 Perigoso (>90dB)
+    
+    🟢 Silencioso (<30dB)
+    
+    🟡 Moderado (30-60dB)
+    
+    🟠 Ruidoso (60-90dB)
+    
+    🔴 Perigoso (>90dB)
 
 🌈 Matriz LED Inteligente
 Colunas	Função	Cores
 0-1	Medição principal	Verde → Amarelo → Vermelho
 3-4	Indicador de sensibilidade	Azul degradê
-⚙️ Níveis de Sensibilidade
-Nível	Faixa (dB)	Cor	Aplicação
-1	60-90	🔵	Ambientes industriais
-2	50-80	💧	Escritórios abertos
-3	40-70	🟡	Residências
-4	30-60	🟠	Estúdios caseiros
-5	20-50	🔴	Estúdios profissionais
+        ⚙️ Níveis de Sensibilidade
+    Nível	Faixa (dB)	Cor	Aplicação
+    1	60-90	🔵	Ambientes industriais
+    2	50-80	💧	Escritórios abertos
+    3	40-70	🟡	Residências
+    4	30-60	🟠	Estúdios caseiros
+    5	20-50	🔴	Estúdios profissionais
 ⚠️ Sistema de Alerta
 🔥 Pisca rapidamente quando excede +10dB do limite
 
@@ -109,35 +109,35 @@ SensitivityRange SENSITIVITY_RANGES[5] = {
 };
 ```
 🚀 Guia Rápido
-Conecte todos os componentes
-
-Carregue o firmware no Pico
-
-Ajuste a sensibilidade com os botões:
-
-Botão A: Aumenta sensibilidade
-
-Botão B: Diminui sensibilidade
-
-Observe a visualização em tempo real
+    Conecte todos os componentes
+    
+    Carregue o firmware no Pico
+    
+    Ajuste a sensibilidade com os botões:
+    
+    Botão A: Aumenta sensibilidade
+    
+    Botão B: Diminui sensibilidade
+    
+    Observe a visualização em tempo real
 
 🔮 Roadmap
-Calibração automática de ganho
-
-Modo noturno com inversão de cores
-
-Exportação de dados via serial
-
-Integração Bluetooth (BLE)
-
-Aplicativo móvel para monitoramento
+    Calibração automática de ganho
+    
+    Modo noturno com inversão de cores
+    
+    Exportação de dados via serial
+    
+    Integração Bluetooth (BLE)
+    
+    Aplicativo móvel para monitoramento
 
 ⚠️ Considerações Importantes
-A precisão varia conforme a qualidade do microfone
-
-Em ambientes muito ruidosos, pode ocorrer saturação
-
-Recomendado operar entre 0-40°C
+    A precisão varia conforme a qualidade do microfone
+    
+    Em ambientes muito ruidosos, pode ocorrer saturação
+    
+    Recomendado operar entre 0-40°C
 
 📜 Licença
 Distribuído sob licença MIT. Consulte o arquivo LICENSE para mais informações.
