@@ -9,9 +9,14 @@
 static volatile uint32_t ultima_interrupcao_b = 0;
 static volatile uint32_t ultima_interrupcao_a = 0;
 
+
+// No topo do arquivo principal (main.c ou equivalente)
+float threshold = 0.5f;  // Mantenha esta linha que você já tem
+
 // Variáveis globais para armazenar os valores de sensibilidade e threshold
 extern uint8_t sensitivity_level;
-extern float threshold;
+// init_GPIO.h
+extern float threshold;  // Declaração externa
 
 // Variáveis globais para armazenar os valores de x e y do joystick
 extern int x;  // Declarado em outro arquivo (por exemplo, main.c)
