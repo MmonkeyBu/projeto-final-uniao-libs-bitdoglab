@@ -1,4 +1,4 @@
-#📢 Sistema de Monitoramento de Nível de Ruído Inteligente
+#📢 Sistema de Monitoramento de Nível de Ruído Inteligente.
 Badge Status
 Badge Versão
 
