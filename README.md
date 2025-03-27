@@ -75,7 +75,7 @@ graph TD
     G[Botões] --> H[Ajuste Sensibilidade]
 📚 Documentação Técnica
 🔧 Funções Principais
-c```
+```c
 Copy
 // Atualiza matriz de LEDs com efeitos visuais
 void update_led_matrix(float db) {
@@ -106,7 +106,8 @@ SensitivityRange SENSITIVITY_RANGES[5] = {
   {40.0f, 70.0f, {180, 180, 0}},   // Amarelo
   {30.0f, 60.0f, {255, 120, 0}},   // Laranja
   {20.0f, 50.0f, {255, 0, 0}}      // Vermelho
-};```
+};
+```
 🚀 Guia Rápido
 Conecte todos os componentes
 
