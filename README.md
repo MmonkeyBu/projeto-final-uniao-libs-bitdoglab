@@ -45,7 +45,7 @@ Classificação automática do ambiente:
     
     🔴 Perigoso (>90dB)
 
-🌈 Matriz LED Inteligente
+🌈 Matriz LED Inteligente.
 Colunas	Função	Cores
 0-1	Medição principal	Verde → Amarelo → Vermelho
 3-4	Indicador de sensibilidade	Azul degradê
