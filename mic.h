@@ -8,6 +8,8 @@
 
 #define DB_OFFSET -15.0f  // Ajuste este valor baseado nos seus testes
 
+extern float var_real;  // Declare as extern
+
 // Pino e canal do microfone no ADC.
 #define MIC_CHANNEL 2
 #define MIC_PIN (26 + MIC_CHANNEL)
@@ -26,8 +28,6 @@
 #define MIC_SENSITIVITY      0.02f     // Sensitivity in Volts/Pascal
 #define REF_SOUND_PRESSURE   20e-6f    // Reference sound pressure (20 µPa)
 
-
-
 // // mic.h (adicionar no final do arquivo)
 // #define MIC_REF_VOLTAGE      3.3f    // Tensão de referência do ADC
 // #define MIC_SENSITIVITY_DB   -46.0f  // Sensibilidade do microfone (ex.: -46dB)
@@ -38,7 +38,7 @@
  * @param rms_voltage Tensão RMS ajustada (em Volts)
  * @return Nível de pressão sonora em dB
  */
-float mic_rms_to_db(float rms_voltage, uint8_t sensitivity_level);
+float mic_rms_to_db(float rms_voltage);
 
 /**
  * Inicializa o módulo de microfone, configurando ADC e DMA.

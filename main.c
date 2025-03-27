@@ -68,7 +68,7 @@ int main() {
         mic_sample(adc_buffer, dma_channel);
         float rms = mic_power(adc_buffer);
         float rms_voltage = fabs(rms);
-        float db = mic_rms_to_db(rms_voltage, sensitivity_level);
+        float db = mic_rms_to_db(rms_voltage);
         
         printf("dB: %.1f, Sens: %d\n", db, sensitivity_level);
         

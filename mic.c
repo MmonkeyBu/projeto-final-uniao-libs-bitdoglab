@@ -5,6 +5,9 @@
 // Configuração do DMA
 static dma_channel_config dma_cfg;
 
+// In mic.c
+float var_real;  // Define the variable here
+
 // Definindo fatores de calibração para cada nível de sensibilidade
 const float CALIBRATION_FACTORS[5] = {
     0.55f,   // Nível 0 (Menos sensível)
@@ -14,16 +17,17 @@ const float CALIBRATION_FACTORS[5] = {
     0.9f    // Nível 4 (Mais sensível)
 };
 
-float mic_rms_to_db(float rms_voltage, uint8_t sensitivity_level) {
+float mic_rms_to_db(float rms_voltage) {
     if (rms_voltage <= 0.0001f) return 0.0f;
     
-    // Usa o fator de calibração baseado no nível de sensibilidade
-    float calibration_factor = CALIBRATION_FACTORS[sensitivity_level];
-    
+    // Calcula a pressão sonora (sem considerar a sensibilidade)
     float sound_pressure = rms_voltage / MIC_SENSITIVITY;
+    
+    // Converte para dB usando a fórmula padrão
     float db = 20.0f * log10f(sound_pressure / REF_SOUND_PRESSURE);
     
-    return fmaxf(0.0f, db * calibration_factor);
+    // Garantir que o valor de dB não seja negativo
+    return fmaxf(0.0f, db * 0.60);
 }
 
 /**
