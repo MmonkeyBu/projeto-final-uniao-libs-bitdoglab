@@ -29,12 +29,6 @@ Colunas	Função	Cores
 0-1	Medição principal	Verde → Amarelo → Vermelho
 3-4	Indicador de sensibilidade	Azul degradê
         ⚙️ Níveis de Sensibilidade
-    Nível	Faixa (dB)	Cor	Aplicação
-   - 1	60-90	🔵	Ambientes industriais.
-   - 2	50-80	💧	Escritórios abertos.
-   - 3	40-70	🟡	Residências.
-   - 4	30-60	🟠	Estúdios caseiros.
-   - 5	20-50	🔴	Estúdios profissionais.
 ⚠️ Sistema de Alerta
 🔥 Pisca rapidamente quando excede +10dB do limite
 
