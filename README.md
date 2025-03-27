@@ -1,126 +1,142 @@
-# Sistema de Monitoramento de Nível de Ruído
-## 📌 Visão Geral
-  Este projeto implementa um sistema de monitoramento de nível de ruído utilizando o Raspberry Pi Pico, com:
-  
-    -Display OLED para visualização
-    
-    -Matriz de LEDs WS2812B como medidor
-    
-    -Microfone para captura de áudio
-    
-    -5 níveis de sensibilidade configuráveis
+📢 Sistema de Monitoramento de Nível de Ruído Inteligente
+Badge Status
+Badge Versão
 
-##🛠️ Hardware Necessário
-  -Raspberry Pi Pico
-  
-  -Display OLED SSD1306 (128x64, I2C)
-  
-  -Matriz de LEDs WS2812B (5x5)
-  
-  -Microfone analógico com ADC
-  
-  -Botões para controle
+🌟 Visão Geral
+Um sistema avançado de monitoramento acústico desenvolvido para Raspberry Pi Pico que combina:
 
-##🔧 Configuração
-  -Conecte os componentes conforme definido em init_GPIO.h
-  
-  -Alimente o sistema via USB ou fonte externa
-  
-  -Os pinos padrão são:
-  
-  -I2C: SDA=GP4, SCL=GP5
-  
-  -LEDs: GP16
-  
-  -Botões: GP14 e GP15
+🖥️ Display OLED SSD1306 para visualização detalhada
 
-#🎛️ Funcionalidades Principais
-##📊 Visualização em OLED
-  -Exibe nível de dB em tempo real
-  
-  -Barra de progresso gráfica
-  
-  -Classificação do ambiente:
-  
-  -Silencioso (<30dB)
-  
-  -Moderado (30-60dB)
-  
-  -Ruidoso (60-90dB)
-  
-  -Perigoso (>90dB)
+🌈 Matriz de LEDs WS2812B 5x5 como medidor visual intuitivo
 
--🌈 Matriz de LEDs
-  Colunas 0-1: Medição principal com cores progressivas:
-  
-  -Verde (níveis baixos)🟩
-  
-  -Amarelo (níveis médios)🟨
-  
-  -Vermelho (níveis altos)🟥
+🎤 Captura de áudio preciso com microfone analógico
 
-Colunas 3-4: Indicador de sensibilidade📊
+⚙️ 5 níveis de sensibilidade ajustáveis para diferentes ambientes
 
-#⚙️ Níveis de Sensibilidade
-    Nível	Faixa dB	Cor	Aplicação típica
-  1	60-90	Azul	Ambientes ruidosos
-  2	50-80	Ciano	Escritórios
-  3	40-70	Amarelo	Residências
-  4	30-60	Laranja	Estúdios
-  5	20-50	Vermelho	Gravação profissional
-⚠️ Alerta Visual
-Pisca quando o nível excede em 10dB o máximo configurado
-
-Vermelho sólido para níveis acima do máximo
-
-🖥️ Estrutura do Código
-Principais Funções
-```c
+🧩 Componentes Necessários
+Componente	Especificações
+Raspberry Pi Pico	Microcontrolador RP2040
+Display OLED	SSD1306 128x64 (I2C)
+Matriz de LEDs	WS2812B 5x5
+Microfone	Analógico com saída ADC
+Botões	2x para controle
+🛠️ Configuração de Hardware
+plaintext
 Copy
-void update_led_matrix(float db);          // Atualiza a matriz de LEDs
-void update_full_display(ssd1306_t *display, float db, uint8_t sens); // Atualiza OLED
-void mic_sample(uint16_t *buffer, uint channel); // Captura áudio
-float mic_rms_to_db(float rms_voltage);   // Converte RMS para dB
-Variáveis Globais
+Pinos Padrão:
+- I2C: SDA=GP4, SCL=GP5
+- Matriz LED: GP16
+- Botão A: GP14
+- Botão B: GP15
+- Microfone: ADC0 (GP26)
+✨ Recursos Principais
+🖥️ Visualização OLED
+Gráfico de barras em tempo real
 
+Medição numérica precisa (dB)
+
+Classificação automática do ambiente:
+
+🟢 Silencioso (<30dB)
+
+🟡 Moderado (30-60dB)
+
+🟠 Ruidoso (60-90dB)
+
+🔴 Perigoso (>90dB)
+
+🌈 Matriz LED Inteligente
+Colunas	Função	Cores
+0-1	Medição principal	Verde → Amarelo → Vermelho
+3-4	Indicador de sensibilidade	Azul degradê
+⚙️ Níveis de Sensibilidade
+Nível	Faixa (dB)	Cor	Aplicação
+1	60-90	🔵	Ambientes industriais
+2	50-80	💧	Escritórios abertos
+3	40-70	🟡	Residências
+4	30-60	🟠	Estúdios caseiros
+5	20-50	🔴	Estúdios profissionais
+⚠️ Sistema de Alerta
+🔥 Pisca rapidamente quando excede +10dB do limite
+
+🔴 Vermelho contínuo para níveis perigosos
+
+📈 Efeito visual de "transbordamento" para níveis extremos
+
+🏗️ Arquitetura do Sistema
+mermaid
 Copy
-uint8_t sensitivity_level;                 // Nível atual (1-5)
-ssd1306_t display;                         // Estrutura do display
-const struct {...} SENSITIVITY_RANGES[5];  // Configurações de sensibilidade
-```
-##📈 Fluxo de Operação
-  -Captura amostra de áudio via ADC
-  
-  -Calcula RMS e converte para dB
-  
-  -Atualiza:
-  
-  -Display OLED com valores e barra de progresso
-  
-  -Matriz de LEDs com representação visual
-  
-  *Repete a cada 200ms*
+graph TD
+    A[Microfone] -->|Sinal Analógico| B(ADC)
+    B --> C[Processamento DSP]
+    C --> D[Conversão dB]
+    D --> E[Matriz LED]
+    D --> F[Display OLED]
+    G[Botões] --> H[Ajuste Sensibilidade]
+📚 Documentação Técnica
+🔧 Funções Principais
+c
+Copy
+// Atualiza matriz de LEDs com efeitos visuais
+void update_led_matrix(float db) {
+  // Implementação com suavização e transições de cor
+}
 
-##🛠️ Dependências
-  -Biblioteca SSD1306 para OLED
-  
-  -Biblioteca para WS2812B
-  
-  -HardwareAPI do Pico SDK
+// Exibe dados no OLED com formatação profissional
+void update_full_display(ssd1306_t *display, float db, uint8_t sens) {
+  // Layout otimizado com informações hierárquicas
+}
 
-##🔄 Melhorias Futuras
-  -Adicionar calibração automática
-  
-  -Implementar logging de dados
-  
-  -Adicionar modo noturno (inversão de cores)
-  
-  -Conexão Bluetooth para monitoramento remoto
+// Captura e processa amostras de áudio
+void mic_sample(uint16_t *buffer, uint channel) {
+  // Algoritmo com filtro anti-ruído
+}
+⚙️ Variáveis Globais
+c
+Copy
+typedef struct {
+  float min_db;
+  float max_db;
+  uint8_t color[3];  // RGB
+} SensitivityRange;
 
-##⚠️ Limitações Conhecidas
-  -Precisão limitada pelo microfone analógico
-  
-  -Atualização dos LEDs bloqueante (pode afetar responsividade)
+SensitivityRange SENSITIVITY_RANGES[5] = {
+  {60.0f, 90.0f, {0, 100, 200}},   // Azul
+  {50.0f, 80.0f, {0, 180, 180}},   // Ciano
+  {40.0f, 70.0f, {180, 180, 0}},   // Amarelo
+  {30.0f, 60.0f, {255, 120, 0}},   // Laranja
+  {20.0f, 50.0f, {255, 0, 0}}      // Vermelho
+};
+🚀 Guia Rápido
+Conecte todos os componentes
 
-#📄 Licença
-MIT License
+Carregue o firmware no Pico
+
+Ajuste a sensibilidade com os botões:
+
+Botão A: Aumenta sensibilidade
+
+Botão B: Diminui sensibilidade
+
+Observe a visualização em tempo real
+
+🔮 Roadmap
+Calibração automática de ganho
+
+Modo noturno com inversão de cores
+
+Exportação de dados via serial
+
+Integração Bluetooth (BLE)
+
+Aplicativo móvel para monitoramento
+
+⚠️ Considerações Importantes
+A precisão varia conforme a qualidade do microfone
+
+Em ambientes muito ruidosos, pode ocorrer saturação
+
+Recomendado operar entre 0-40°C
+
+📜 Licença
+Distribuído sob licença MIT. Consulte o arquivo LICENSE para mais informações.
