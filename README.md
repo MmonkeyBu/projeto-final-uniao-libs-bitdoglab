@@ -38,13 +38,13 @@ Badge Versão
 
 ## 🏗️ Arquitetura do Sistema
 
-graph TD
-    A[Microfone] -->|Sinal Analógico| B(ADC)
-    B --> C[Processamento DSP]
-    C --> D[Conversão dB]
-    D --> E[Matriz LED]
-    D --> F[Display OLED]
-    G[Botões] --> H[Ajuste Sensibilidade]
+- **graph TD
+    - **A[Microfone] -->|Sinal Analógico| B(ADC)
+    - **B --> C[Processamento DSP]
+    - **C --> D[Conversão dB]
+    - **D --> E[Matriz LED]
+    - **D --> F[Display OLED]
+    - **G[Botões] --> H[Ajuste Sensibilidade]
 ##📚 Documentação Técnica
 - **🔧 Funções Principais
 ```c
