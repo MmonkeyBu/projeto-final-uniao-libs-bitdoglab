@@ -2,7 +2,7 @@
 Badge Status
 Badge Versão
 
-🌟 Visão Geral
+##🌟 Visão Geral
     Um sistema avançado de monitoramento acústico desenvolvido para Raspberry Pi Pico que combina:
     
     🖥️ Display OLED SSD1306 para visualização detalhada
@@ -13,7 +13,7 @@ Badge Versão
     
     ⚙️ 5 níveis de sensibilidade ajustáveis para diferentes ambientes
 
-🧩 Componentes Necessários
+###🧩 Componentes Necessários
     Componente	Especificações
         Raspberry Pi Pico	Microcontrolador RP2040
         Display OLED	SSD1306 128x64 (I2C)
@@ -51,11 +51,11 @@ Colunas	Função	Cores
 3-4	Indicador de sensibilidade	Azul degradê
         ⚙️ Níveis de Sensibilidade
     Nível	Faixa (dB)	Cor	Aplicação
-    1	60-90	🔵	Ambientes industriais
-    2	50-80	💧	Escritórios abertos
-    3	40-70	🟡	Residências
-    4	30-60	🟠	Estúdios caseiros
-    5	20-50	🔴	Estúdios profissionais
+   - 1	60-90	🔵	Ambientes industriais.
+   - 2	50-80	💧	Escritórios abertos.
+   - 3	40-70	🟡	Residências.
+   - 4	30-60	🟠	Estúdios caseiros.
+   - 5	20-50	🔴	Estúdios profissionais.
 ⚠️ Sistema de Alerta
 🔥 Pisca rapidamente quando excede +10dB do limite
 
