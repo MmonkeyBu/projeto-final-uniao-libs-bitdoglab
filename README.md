@@ -38,7 +38,6 @@ Badge Versão
 
 ## 🏗️ Arquitetura do Sistema
 
-```mermaid
 graph TD
     A[Microfone] -->|Sinal Analógico| B(ADC)
     B --> C[Processamento DSP]
@@ -81,6 +80,7 @@ SensitivityRange SENSITIVITY_RANGES[5] = {
   {20.0f, 50.0f, {255, 0, 0}}      // Vermelho
 };
 ```
+
 🚀 Guia Rápido
     Conecte todos os componentes
     
