@@ -45,8 +45,8 @@ graph TD
     D --> E[Matriz LED]
     D --> F[Display OLED]
     G[Botões] --> H[Ajuste Sensibilidade]
-📚 Documentação Técnica
-🔧 Funções Principais
+##📚 Documentação Técnica
+- **🔧 Funções Principais
 ```c
 Copy
 // Atualiza matriz de LEDs com efeitos visuais
