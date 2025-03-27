@@ -2,48 +2,27 @@
 Badge Status
 Badge Versão
 
-##🌟 Visão Geral
-    Um sistema avançado de monitoramento acústico desenvolvido para Raspberry Pi Pico que combina:
-    
-    🖥️ Display OLED SSD1306 para visualização detalhada
-    
-    🌈 Matriz de LEDs WS2812B 5x5 como medidor visual intuitivo
-    
-    🎤 Captura de áudio preciso com microfone analógico
-    
-    ⚙️ 5 níveis de sensibilidade ajustáveis para diferentes ambientes
+# ✨ Recursos Principais
 
-###🧩 Componentes Necessários
-    Componente	Especificações
-        Raspberry Pi Pico	Microcontrolador RP2040
-        Display OLED	SSD1306 128x64 (I2C)
-        Matriz de LEDs	WS2812B 5x5
-        Microfone	Analógico com saída ADC
-        Botões	2x para controle
-🛠️ Configuração de Hardware
-plaintext
-Copy
-    Pinos Padrão:
-    - I2C: SDA=GP4, SCL=GP5
-    - Matriz LED: GP16
-    - Botão A: GP14
-    - Botão B: GP15
-    - Microfone: ADC0 (GP26)
-✨ Recursos Principais
-🖥️ Visualização OLED
-Gráfico de barras em tempo real
+## 🖥️ Visualização OLED
+- **Gráfico de barras** em tempo real
+- **Medição numérica** precisa (dB) 
+- **Classificação automática** do ambiente:
+  - 🟢 **Silencioso** (<30dB)
+  - 🟡 **Moderado** (30-60dB)
+  - 🟠 **Ruidoso** (60-90dB) 
+  - 🔴 **Perigoso** (>90dB)
 
-Medição numérica precisa (dB)
+## 🌈 Matriz LED Inteligente
+| Colunas | Função                | Padrão de Cores           |
+|---------|-----------------------|---------------------------|
+| 0-1     | Medição principal     | Verde → Amarelo → Vermelho|
+| 3-4     | Indicador de sensibilidade | Azul degradê        |
 
-Classificação automática do ambiente:
-    
-    🟢 Silencioso (<30dB)
-    
-    🟡 Moderado (30-60dB)
-    
-    🟠 Ruidoso (60-90dB)
-    
-    🔴 Perigoso (>90dB)
+## ⚠️ Sistema de Alerta
+- **Pisca rapidamente** (200ms) quando excede +10dB do limite configurado
+- **Vermelho sólido** para níveis acima do máximo
+- **Efeito de transbordamento** visual quando atinge picos extremos
 
 🌈 Matriz LED Inteligente.
 Colunas	Função	Cores
