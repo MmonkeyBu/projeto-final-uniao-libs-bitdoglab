@@ -1,0 +1,123 @@
+Timestamp,Data
+2025-03-18 14:44:13,"Valores de x: 2068, y: 2108, estado_inverter: 0"
+2025-03-18 14:44:14,"Menu MainValores de x: 2070, y: 2106, estado_inverter: 0"
+2025-03-18 14:44:15,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:44:15,○ Centralizado
+2025-03-18 14:44:16,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:44:16,"Menu MainValores de x: 2073, y: 2107, estado_inverter: 0"
+2025-03-18 14:44:17,"Menu MainValores de x: 4077, y: 2106, estado_inverter: 0"
+2025-03-18 14:44:18,"Menu MainValores de x: 4077, y: 2391, estado_inverter: 0"
+2025-03-18 14:44:18,"Menu MainValores de x: 4077, y: 2858, estado_inverter: 0"
+2025-03-18 14:44:19,"Menu MainValores de x: 2073, y: 4077, estado_inverter: 0"
+2025-03-18 14:44:19,"Menu MainValores de x: 12, y: 2104, estado_inverter: 0"
+2025-03-18 14:44:20,"Menu MainValores de x: 2073, y: 11, estado_inverter: 0"
+2025-03-18 14:44:21,"Menu MainValores de x: 3848, y: 2105, estado_inverter: 0"
+2025-03-18 14:44:21,"Menu MainValores de x: 2056, y: 4068, estado_inverter: 0"
+2025-03-18 14:44:22,"Menu MainValores de x: 2073, y: 12, estado_inverter: 0"
+2025-03-18 14:44:22,"Menu MainValores de x: 3776, y: 4072, estado_inverter: 0"
+2025-03-18 14:44:23,"Menu MainValores de x: 16, y: 11, estado_inverter: 0"
+2025-03-18 14:44:24,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:44:24,"Menu MainValores de x: 2069, y: 11, estado_inverter: 0"
+2025-03-18 14:44:25,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:44:25,"Menu MainValores de x: 2073, y: 4077, estado_inverter: 0"
+2025-03-18 14:44:26,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:44:27,○ Centralizado
+2025-03-18 14:44:27,"Menu MainValores de x: 2073, y: 2096, estado_inverter: 0"
+2025-03-18 14:44:28,Botão A pressionado
+2025-03-18 14:44:30,Teste: Direita
+2025-03-18 14:44:32,Teste: Baixo
+2025-03-18 14:44:34,Teste: Direita-Baixo
+2025-03-18 14:44:36,Teste: Esquerda-Cima
+2025-03-18 14:44:39,Teste: Esquerda-Baixo
+2025-03-18 14:44:41,Teste: Cima
+2025-03-18 14:44:43,Teste: Esquerda
+2025-03-18 14:44:45,Teste: Direita-Cima
+2025-03-18 14:44:47,Testes de direção concluídos.
+2025-03-18 14:44:53,Testando gestos do joystick...
+2025-03-18 14:44:56,Testando exibição de frase na matriz de LEDs...
+2025-03-18 14:45:00,Testando exibição de animação na matriz de LEDs...
+2025-03-18 14:45:03,Testando ajuste de brilho na matriz de LEDs...
+2025-03-18 14:45:04,Diminuindo intensidade ledexibindo intensidade atual
+2025-03-18 14:45:07,Testes automatizados concluídos.
+2025-03-18 14:45:08,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:09,"Menu MainValores de x: 2068, y: 2100, estado_inverter: 0"
+2025-03-18 14:45:09,○ Centralizado
+2025-03-18 14:45:10,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:10,○ Centralizado
+2025-03-18 14:45:11,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:12,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:12,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:13,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:13,"Menu MainValores de x: 2074, y: 2107, estado_inverter: 0"
+2025-03-18 14:45:14,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:15,○ Centralizado
+2025-03-18 14:45:15,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:16,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:16,○ Centralizado
+2025-03-18 14:45:17,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:18,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:18,"Menu MainValores de x: 2072, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:19,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:19,○ Centralizado
+2025-03-18 14:45:20,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:21,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:21,○ Centralizado
+2025-03-18 14:45:22,"Menu MainValores de x: 2072, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:22,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:23,"Menu MainValores de x: 2072, y: 2098, estado_inverter: 0"
+2025-03-18 14:45:24,"Menu MainValores de x: 2072, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:24,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:25,"Menu MainValores de x: 2443, y: 4077, estado_inverter: 0"
+2025-03-18 14:45:26,Menu MainBotão A pressionado
+2025-03-18 14:45:26,"Submenu-1Valores de x: 2066, y: 1642, estado_inverter: 0"
+2025-03-18 14:45:27,"Submenu-1Valores de x: 2073, y: 11, estado_inverter: 0"
+2025-03-18 14:45:27,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:28,○ Centralizado
+2025-03-18 14:45:29,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:29,○ Centralizado
+2025-03-18 14:45:30,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:30,○ Centralizado
+2025-03-18 14:45:31,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:32,"Submenu-1Valores de x: 2074, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:32,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:33,○ Centralizado
+2025-03-18 14:45:33,"Submenu-1Valores de x: 2068, y: 2104, estado_inverter: 0"
+2025-03-18 14:45:34,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:35,○ Centralizado
+2025-03-18 14:45:35,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:36,○ Centralizado
+2025-03-18 14:45:36,"Submenu-1Valores de x: 2072, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:37,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:38,"Submenu-1Valores de x: 2073, y: 2107, estado_inverter: 0"
+2025-03-18 14:45:38,"Submenu-1Valores de x: 2066, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:39,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:39,"Submenu-1Valores de x: 2073, y: 2100, estado_inverter: 0"
+2025-03-18 14:45:40,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:41,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:41,○ Centralizado
+2025-03-18 14:45:42,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:42,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:43,"Submenu-1Valores de x: 2073, y: 2104, estado_inverter: 0"
+2025-03-18 14:45:44,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:44,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:45,"Submenu-1Valores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:45,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:46,○ Centralizado
+2025-03-18 14:45:47,"Submenu-1Valores de x: 2068, y: 2100, estado_inverter: 0"
+2025-03-18 14:45:47,"Submenu-1Valores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:48,"Submenu-1Valores de x: 2074, y: 2104, estado_inverter: 0"
+2025-03-18 14:45:48,"Submenu-1Valores de x: 2073, y: 2104, estado_inverter: 0"
+2025-03-18 14:45:49,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:50,"Menu MainValores de x: 2074, y: 2102, estado_inverter: 0"
+2025-03-18 14:45:50,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:51,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:51,"Menu MainValores de x: 2068, y: 2101, estado_inverter: 0"
+2025-03-18 14:45:52,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:53,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:53,○ Centralizado
+2025-03-18 14:45:54,"Menu MainValores de x: 2073, y: 2106, estado_inverter: 0"
+2025-03-18 14:45:54,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:55,○ Centralizado
+2025-03-18 14:45:56,"Menu MainValores de x: 2073, y: 2105, estado_inverter: 0"
+2025-03-18 14:45:56,"Menu MainValores de x: 2068, y: 2104, estado_inverter: 0"
+2025-03-18 14:45:57,"Menu MainValores de x: 2072, y: 2106, estado_inverter: 0"
