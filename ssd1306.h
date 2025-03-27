@@ -199,5 +199,3 @@ void ssd1306_power_on(ssd1306_t *display);
  * @param display Pointer to the display structure.
  */
 void ssd1306_power_off(ssd1306_t *display);
-
-/* Future upgrades: hardare scrolling support, draw circles support */ 
