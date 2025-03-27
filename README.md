@@ -24,21 +24,21 @@ Badge Versão
 - **Vermelho sólido** para níveis acima do máximo
 - **Efeito de transbordamento** visual quando atinge picos extremos
 
-🌈 Matriz LED Inteligente.
-Colunas	Função	Cores
-0-1	Medição principal	Verde → Amarelo → Vermelho
-3-4	Indicador de sensibilidade	Azul degradê
-        ⚙️ Níveis de Sensibilidade
-⚠️ Sistema de Alerta
-🔥 Pisca rapidamente quando excede +10dB do limite
+##🌈 Matriz LED Inteligente.
+- **Colunas	Função	Cores
+- **0-1	Medição principal	Verde → Amarelo → Vermelho
+- **3-4	Indicador de sensibilidade	Azul degradê
+        ##⚙️ Níveis de Sensibilidade
+##⚠️ Sistema de Alerta
+- **🔥 Pisca rapidamente quando excede +10dB do limite
 
-🔴 Vermelho contínuo para níveis perigosos
+- **🔴 Vermelho contínuo para níveis perigosos
 
-📈 Efeito visual de "transbordamento" para níveis extremos
+- **📈 Efeito visual de "transbordamento" para níveis extremos
 
-🏗️ Arquitetura do Sistema
-mermaid
-Copy
+## 🏗️ Arquitetura do Sistema
+
+```mermaid
 graph TD
     A[Microfone] -->|Sinal Analógico| B(ADC)
     B --> C[Processamento DSP]
