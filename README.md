@@ -116,4 +116,4 @@ SensitivityRange SENSITIVITY_RANGES[5] = {
 Distribuído sob licença MIT. Consulte o arquivo LICENSE para mais informações.
 
 Documentação:
-https://docs.google.com/document/d/1Db6v1vT2ME8WAcF0v2bjZ2etrYTdUUFxlIwwtinqZvE/edit?tab=t.0#heading=h.88hpo9c8h6ap
+https://drive.google.com/file/d/1ucf_12XSm7CM-aG-HwoGIvxd_PZjeK1y/view?usp=sharing
